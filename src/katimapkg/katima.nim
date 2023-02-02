@@ -3,16 +3,16 @@ import
   unicode
 
 
-type DestType* {.pure} = enum
+type DestType {.pure} = enum
   Old
   New
   Reversal
 
-type FormType* {.pure.} = enum
+type FormType {.pure.} = enum
   Old
   New
 
-type Katima* = object
+type Katima = object
   new2oldKanjiTable: Table[string, string]
   old2newKanjiTable: Table[string, string]
 
@@ -34,8 +34,7 @@ proc toAnotherForm(c: string, k: Katima, formType: FormType): string =
         return k.old2newKanjiTable[c]
   return c
 
-proc convert*(k: var Katima, str: string, destType: DestType): string =
-  k.init()
+proc convert(k: var Katima, str: string, destType: DestType): string =
   for character in str.toRunes:
     case destType:
       of DestType.Old:
@@ -47,3 +46,15 @@ proc convert*(k: var Katima, str: string, destType: DestType): string =
           result &= ($character).toAnotherForm(k, FormType.New)
         else:
           result &= ($character).toAnotherForm(k, FormType.Old)
+
+var k = Katima()
+k.init()
+
+proc toOldForm*(s: string): string =
+  k.convert(s, DestType.Old)
+
+proc toNewForm*(s: string): string =
+  k.convert(s, DestType.New)
+
+proc toReversal*(s: string): string =
+  k.convert(s, DestType.Reversal)

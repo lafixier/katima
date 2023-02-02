@@ -3,7 +3,6 @@ import
 
 
 when isMainModule:
-  var k = Katima()
-  echo k.convert("医学", DestType.Old)
-  echo k.convert("醫學", DestType.New)
-  echo k.convert("医學", DestType.Reversal)
+  echo "医学".toOldForm
+  echo "醫學".toNewForm
+  echo "医學".toReversal
