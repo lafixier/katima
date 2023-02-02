@@ -28,7 +28,7 @@ proc toAnotherForm(c: string, k: Katima, formType: FormType): string =
         return k.old2newKanjiTable[c]
   return c
 
-proc convert(k: var Katima, str: string, destType: DestType): string =
+proc convert(k: Katima, str: string, destType: DestType): string =
   for character in str.toRunes:
     case destType:
       of DestType.Old:
