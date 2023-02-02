@@ -2,9 +2,15 @@ import
   tables,
   unicode
 
-import
-  types
 
+type DestType* {.pure} = enum
+  Old
+  New
+  Reversal
+
+type FormType* {.pure.} = enum
+  Old
+  New
 
 type Katima* = object
   new2oldKanjiTable: Table[string, string]

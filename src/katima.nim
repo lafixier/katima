@@ -1,6 +1,5 @@
 import
-  katimapkg/katima,
-  katimapkg/types
+  katimapkg/katima
 
 
 when isMainModule:
