@@ -1,7 +1,8 @@
-# This is just an example to get you started. A typical hybrid package
-# uses this file as the main entry point of the application.
+import
+  katimapkg/katima
 
-import katimapkg/submodule
 
 when isMainModule:
-  echo(getWelcomeMessage())
+  echo "医学".toOldForm
+  echo "醫學".toNewForm
+  echo "医學".toReversal
