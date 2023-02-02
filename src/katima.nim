@@ -1,7 +1,10 @@
-# This is just an example to get you started. A typical hybrid package
-# uses this file as the main entry point of the application.
+import
+  katimapkg/katima,
+  katimapkg/types
 
-import katimapkg/submodule
 
 when isMainModule:
-  echo(getWelcomeMessage())
+  var k = Katima()
+  echo k.convert("医学", DestType.Old)
+  echo k.convert("醫學", DestType.New)
+  echo k.convert("医學", DestType.Reversal)
