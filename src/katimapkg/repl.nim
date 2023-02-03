@@ -15,6 +15,7 @@ proc quit*(repl: Repl) =
 
 proc showHelp(repl: Repl) =
   echo "Commands:"
+  echo "  /h, /help:      show this help"
   echo "  /o, /old:       switch to old character form mode (default)"
   echo "  /n, /new:       switch to new character form mode"
   echo "  /r, /reversal:  switch to reversal mode"
@@ -36,6 +37,9 @@ proc run*(repl: Repl) =
     let userInput = readLine(stdin)
     if userInput[0] == '/':
       destType = case userInput:
+        of "/h", "/help":
+          repl.showHelp()
+          destType
         of "/o", "/old":
           DestType.Old
         of "/n", "/new":
