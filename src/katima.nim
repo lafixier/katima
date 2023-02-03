@@ -7,7 +7,7 @@ proc runRepl() =
   let r = Repl()
   r.run()
 
-proc repl(args:seq[string]) =
+proc repl(args: seq[string]) =
   ## start the REPL mode
   runRepl()
 
