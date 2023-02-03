@@ -1,4 +1,4 @@
-type DestType* {.pure} = enum
+type DestType* {.pure.} = enum
   Old
   New
   Reversal
