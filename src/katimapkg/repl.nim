@@ -1,4 +1,7 @@
 import
+  strformat
+
+import
   katima,
   types
 
@@ -22,7 +25,14 @@ proc run*(repl: Repl) =
   var destType = DestType.Old
   repl.showHelp()
   while true:
-    stdout.write(prefix)
+    let currentMode = case destType:
+      of DestType.Old:
+        "New->Old"
+      of DestType.New:
+        "Old->New"
+      of DestType.Reversal:
+        "New -> Old, Old -> New"
+    stdout.write(fmt"({currentMode}) {prefix}")
     let userInput = readLine(stdin)
     if userInput[0] == '/':
       destType = case userInput:
