@@ -10,9 +10,17 @@ type Repl* = object
 proc quit*(repl: Repl) =
   quit(0)
 
+proc showHelp(repl: Repl) =
+  echo "Commands:"
+  echo "  /o, /old:       switch to old character form mode (default)"
+  echo "  /n, /new:       switch to new character form mode"
+  echo "  /r, /reversal:  switch to reversal mode"
+  echo "  /q, /quit:      quit"
+
 proc run*(repl: Repl) =
   const prefix = "> "
   var destType = DestType.Old
+  repl.showHelp()
   while true:
     stdout.write(prefix)
     let userInput = readLine(stdin)
