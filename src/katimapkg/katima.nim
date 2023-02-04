@@ -10,15 +10,15 @@ type Katima = object
   new2oldKanjiTable: Table[string, string]
   old2newKanjiTable: Table[string, string]
 
-proc setKanjiTables(k: var Katima) =
+func setKanjiTables(k: var Katima) =
   k.new2oldKanjiTable = {"医": "醫", "学": "學"}.toTable
   for key, value in k.new2oldKanjiTable.pairs:
     k.old2newKanjiTable[value] = key
 
-proc init(k: var Katima) =
+func init(k: var Katima) =
   k.setKanjiTables()
 
-proc toAnotherForm(c: string, k: Katima, formType: FormType): string =
+func toAnotherForm(c: string, k: Katima, formType: FormType): string =
   case formType:
     of FormType.Old:
       if c in k.new2oldKanjiTable:
@@ -28,7 +28,7 @@ proc toAnotherForm(c: string, k: Katima, formType: FormType): string =
         return k.old2newKanjiTable[c]
   return c
 
-proc convert(k: Katima, str: string, destType: DestType): string =
+func convert(k: Katima, str: string, destType: DestType): string =
   for character in str.toRunes:
     case destType:
       of DestType.Old:
