@@ -52,3 +52,15 @@ proc toNewCharForms*(s: string): string =
 
 proc toReversal*(s: string): string =
   k.convert(s, DestType.Reversal)
+
+proc isOldCharForm*(s: string): bool =
+  s == ($s.toRunes[0]).toOldCharForms
+
+proc isOldCharForm*(r: Rune): bool =
+  $r == ($r).toOldCharForms
+
+proc isNewCharForm*(s: string): bool =
+  s == ($s.toRunes[0]).toNewCharForms
+
+proc isNewCharForm*(r: Rune): bool =
+  $r == ($r).toNewCharForms
