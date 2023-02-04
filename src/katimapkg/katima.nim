@@ -44,10 +44,10 @@ proc convert(k: Katima, str: string, destType: DestType): string =
 var k = Katima()
 k.init()
 
-proc toOldForm*(s: string): string =
+proc toOldCharForms*(s: string): string =
   k.convert(s, DestType.Old)
 
-proc toNewForm*(s: string): string =
+proc toNewCharForms*(s: string): string =
   k.convert(s, DestType.New)
 
 proc toReversal*(s: string): string =
