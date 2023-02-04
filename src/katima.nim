@@ -35,7 +35,7 @@ proc convert(
     else:
       src
 
-  stdout.write dest
+  stdout.write(dest)
 
 when isMainModule:
   import cligen
