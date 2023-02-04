@@ -10,7 +10,7 @@ type Repl* = object
   discard
 
 
-proc quit(repl: Repl) =
+func quit(repl: Repl) =
   quit(0)
 
 proc showHelp(repl: Repl) =
