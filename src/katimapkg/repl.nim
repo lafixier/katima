@@ -55,8 +55,8 @@ proc run*(repl: Repl) =
     else:
       echo case destType:
         of DestType.Old:
-          userInput.toOldForm()
+          userInput.toOldCharForms()
         of DestType.New:
-          userInput.toNewForm()
+          userInput.toNewCharForms()
         of DestType.Reversal:
           userInput.toReversal()

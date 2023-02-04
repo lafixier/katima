@@ -27,9 +27,9 @@ proc convert(
 
   let dest =
     if oldCharFormsMode:
-      src.toOldForm
+      src.toOldCharForms
     elif newCharFormsMode:
-      src.toNewForm
+      src.toNewCharForms
     elif reversalMode:
       src.toReversal
     else:
