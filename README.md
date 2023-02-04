@@ -1,4 +1,4 @@
-# Katima -  Tool/Library for Kanji (Kyūjitai/Shinjitai) <!-- omit in toc -->
+# Katima - Tool/Library for Kanji (Kyūjitai/Shinjitai) <!-- omit in toc -->
 
 > **Warning**
 > This project is currently in pilot development.
