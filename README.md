@@ -36,8 +36,7 @@
 
 ## 1. About
 
-Katima (**Ka**nji **Ti**me **Ma**chine) is a tool/library written in Nim
- to convert between [kyūjitai](https://en.wikipedia.org/wiki/Ky%C5%ABjitai) (old character forms) and [shinjitai](https://en.wikipedia.org/wiki/Shinjitai) (new character forms).
+Katima (**Ka**nji **Ti**me **Ma**chine) is a tool/library written in Nim to convert between [kyūjitai](https://en.wikipedia.org/wiki/Ky%C5%ABjitai) (old character forms) and [shinjitai](https://en.wikipedia.org/wiki/Shinjitai) (new character forms).
 
 ## 2. Features
 
