@@ -12,12 +12,30 @@ proc repl(args: seq[string]) =
   runRepl()
 
 proc convert(
-  oldCharFormsSrc = "", newCharFormsSrc = "",
-    reversalSrc = "", args: seq[string]) =
-  if oldCharFormsSrc != "": echo oldCharFormsSrc.toOldForm
-  if newCharFormsSrc != "": echo newCharFormsSrc.toNewForm
-  if reversalSrc != "": echo reversalSrc.toReversal
+  oldCharFormsMode = false, newCharFormsMode = false, reversalMode = false,
+    args: seq[string]) =
+  ## convert the input to the specified forms
+  let src =
+    if args.len == 0:
+      stdin.readLine
+    else:
+      let srcFilePath = args[0]
+      var file = open(srcFilePath, FileMode.fmRead)
+      defer:
+        file.close()
+      file.readAll()
 
+  let dest =
+    if oldCharFormsMode:
+      src.toOldForm
+    elif newCharFormsMode:
+      src.toNewForm
+    elif reversalMode:
+      src.toReversal
+    else:
+      src
+
+  stdout.write dest
 
 when isMainModule:
   import cligen
