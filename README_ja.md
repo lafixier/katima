@@ -34,10 +34,10 @@
 
 - [1. 概要](#1-概要)
 - [2. 機能](#2-機能)
-- [3. インストール](#3-インストール)
-  - [3.1. nimble経由](#31-nimble経由)
-- [4. 使い方](#4-使い方)
-  - [4.1. CLI](#41-cli)
+- [3. 使い方](#3-使い方)
+  - [3.1. CLI](#31-cli)
+- [4. インストール](#4-インストール)
+  - [4.1. nimble経由](#41-nimble経由)
 - [5. ライセンス](#5-ライセンス)
 
 ## 1. 概要
@@ -48,23 +48,23 @@ Katima (**Ka**nji **Ti**me **Ma**chine) は、[旧字体](https://ja.wikipedia.o
 
 foo
 
-## 3. インストール
+## 3. 使い方
 
-### 3.1. nimble経由
-
-```bash
-nimble install katima
-```
-
-## 4. 使い方
-
-### 4.1. CLI
+### 3.1. CLI
 
 ```bash
 echo "医学を学ぶ" | katima convert --oldCharFormsMode # 醫學を學ぶ
 echo "医学を学ぶ" | katima c -o                       # 醫學を學ぶ
 echo "醫學を學ぶ" | katima convert --newCharFormsMode # 医学を学ぶ
 echo "醫學を學ぶ" | katima c -n                       # 医学を学ぶ
+```
+
+## 4. インストール
+
+### 4.1. nimble経由
+
+```bash
+nimble install katima
 ```
 
 ## 5. ライセンス
