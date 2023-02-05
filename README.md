@@ -61,7 +61,17 @@ nimble install katima
 ### 4.1. CLI
 
 ```bash
-katima -h
+echo "医学を学ぶ" | katima convert --oldCharFormsMode # 醫學を學ぶ
+echo "医学を学ぶ" | katima c -o                       # 醫學を學ぶ
+echo "醫學を學ぶ" | katima convert --newCharFormsMode # 医学を学ぶ
+echo "醫學を學ぶ" | katima c -n                       # 医学を学ぶ
+```
+
+```bash
+katima convert --oldCharFormsMode "input.txt"
+katima c -o "input.txt"
+katima convert --newCharFormsMode "input.txt"
+katima c -n "input.txt"
 ```
 
 ## 5. License
