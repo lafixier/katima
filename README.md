@@ -1,10 +1,10 @@
 # Katima - Tool/Library for Kanji (Kyūjitai/Shinjitai) <!-- omit in toc -->
 
-![GitHub Repo stars](https://img.shields.io/github/stars/lafixier/katima?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/lafixier/katima?style=for-the-badge)
+[![GitHub Repo stars](https://img.shields.io/github/stars/lafixier/katima?style=for-the-badge)](https://github.com/lafixier/katima/stargazers)
+[![GitHub](https://img.shields.io/github/license/lafixier/katima?style=for-the-badge)](https://github.com/lafixier/katima/blob/develop/LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/lafixier/katima?style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/lafixier/katima?style=for-the-badge)
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/lafixier/katima?style=for-the-badge)
+[![GitHub issues](https://img.shields.io/github/issues/lafixier/katima?style=for-the-badge)](https://github.com/lafixier/katima/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/lafixier/katima?style=for-the-badge)](https://github.com/lafixier/katima/pulls)
 
 > **Warning**
 > This project is currently in pilot development.
