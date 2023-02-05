@@ -3,6 +3,7 @@ import
   unicode
 
 import
+  kanji_table,
   types
 
 
@@ -11,7 +12,7 @@ type Katima = object
   old2newKanjiTable: Table[string, string]
 
 func setKanjiTables(k: var Katima) =
-  k.new2oldKanjiTable = {"医": "醫", "学": "學"}.toTable
+  k.new2oldKanjiTable = new2oldKanjiTable
   for key, value in k.new2oldKanjiTable.pairs:
     k.old2newKanjiTable[value] = key
 
