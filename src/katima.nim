@@ -17,7 +17,15 @@ proc convert(
   ## convert the input to the specified forms
   let src =
     if args.len == 0:
-      stdin.readLine
+      var result = ""
+      while true:
+        var input = ""
+        try:
+          input = stdin.readLine
+        except IOError:
+          break
+        result &= input & "\n"
+      result
     else:
       let srcFilePath = args[0]
       var file = open(srcFilePath, FileMode.fmRead)
