@@ -36,6 +36,9 @@
 - [2. 機能](#2-機能)
 - [3. 使い方](#3-使い方)
   - [3.1. CLI](#31-cli)
+    - [3.1.1. REPL](#311-repl)
+    - [3.1.2. Convert](#312-convert)
+  - [3.2. Library](#32-library)
 - [4. インストール](#4-インストール)
   - [4.1. nimble経由](#41-nimble経由)
 - [5. ライセンス](#5-ライセンス)
@@ -50,13 +53,62 @@ foo
 
 ## 3. 使い方
 
+ドキュメントは[docs](docs)ディレクトリに存在します。
+
 ### 3.1. CLI
+
+#### 3.1.1. REPL
+
+```bash
+katima repl
+
+```
+
+#### 3.1.2. Convert
 
 ```bash
 echo "医学を学ぶ" | katima convert --oldCharFormsMode # 醫學を學ぶ
 echo "医学を学ぶ" | katima c -o                       # 醫學を學ぶ
 echo "醫學を學ぶ" | katima convert --newCharFormsMode # 医学を学ぶ
 echo "醫學を學ぶ" | katima c -n                       # 医学を学ぶ
+echo "医學を学ぶ" | katima c --reversal               # 醫学を學ぶ
+echo "医學を学ぶ" | katima c -r                       # 醫学を學ぶ
+```
+
+```bash
+cat input_1.txt                                 # 医学を学ぶ
+cat input_2.txt                                 # 醫學を學ぶ
+cat input_3.txt                                 # 医學を学ぶ
+
+katima convert --oldCharFormsMode "input_1.txt" # 醫學を學ぶ
+katima c -o "input_1.txt"                       # 醫學を學ぶ
+katima convert --newCharFormsMode "input_2.txt" # 医学を学ぶ
+katima c -n "input_2.txt"                       # 医学を学ぶ
+katima convert --newCharFormsMode "input_3.txt" # 醫学を學ぶ
+katima c -n "input_3.txt"                       # 醫学を學ぶ
+```
+
+### 3.2. Library
+
+```nim
+import katima
+
+echo "医学を学ぶ".toOldCharForms    # 醫學を學ぶ
+echo "醫學を學ぶ".toNewCharForms    # 医学を学ぶ
+echo "医学を学ぶ".toReversal        # 医学を学ぶ
+
+echo "學".isOldCharForm            # true
+echo "学".isOldCharForm            # false
+echo "学".isNewCharForm            # true
+echo "學".isNewCharForm            # false
+
+import unicode
+
+let kanji = "學学".toRunes
+echo kanji[0].isOldCharForm        # true
+echo kanji[1].isOldCharForm        # false
+echo kanji[1].isNewCharForm        # true
+echo kanji[0].isNewCharForm        # false
 ```
 
 ## 4. インストール

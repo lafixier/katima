@@ -36,9 +36,12 @@
 - [2. Features](#2-features)
 - [3. Usage](#3-usage)
   - [3.1. CLI](#31-cli)
-- [4. Installation](#4-installation)
-  - [4.1. Via nimble](#41-via-nimble)
-- [5. License](#5-license)
+    - [3.1.1. REPL](#311-repl)
+    - [3.1.2. Convert](#312-convert)
+- [4. 3.2 Library](#4-32-library)
+- [5. Installation](#5-installation)
+  - [5.1. Via nimble](#51-via-nimble)
+- [6. License](#6-license)
 
 ## 1. About
 
@@ -50,30 +53,72 @@ foo
 
 ## 3. Usage
 
+The documentation is exists in the [docs](docs) directory.
+
 ### 3.1. CLI
+
+#### 3.1.1. REPL
+
+```bash
+katima repl
+
+```
+
+#### 3.1.2. Convert
 
 ```bash
 echo "医学を学ぶ" | katima convert --oldCharFormsMode # 醫學を學ぶ
 echo "医学を学ぶ" | katima c -o                       # 醫學を學ぶ
 echo "醫學を學ぶ" | katima convert --newCharFormsMode # 医学を学ぶ
 echo "醫學を學ぶ" | katima c -n                       # 医学を学ぶ
+echo "医學を学ぶ" | katima c --reversal               # 醫学を學ぶ
+echo "医學を学ぶ" | katima c -r                       # 醫学を學ぶ
 ```
 
 ```bash
-katima convert --oldCharFormsMode "input.txt"
-katima c -o "input.txt"
-katima convert --newCharFormsMode "input.txt"
-katima c -n "input.txt"
+cat input_1.txt                                 # 医学を学ぶ
+cat input_2.txt                                 # 醫學を學ぶ
+cat input_3.txt                                 # 医學を学ぶ
+
+katima convert --oldCharFormsMode "input_1.txt" # 醫學を學ぶ
+katima c -o "input_1.txt"                       # 醫學を學ぶ
+katima convert --newCharFormsMode "input_2.txt" # 医学を学ぶ
+katima c -n "input_2.txt"                       # 医学を学ぶ
+katima convert --newCharFormsMode "input_3.txt" # 醫学を學ぶ
+katima c -n "input_3.txt"                       # 醫学を學ぶ
 ```
 
-## 4. Installation
+## 4. 3.2 Library
 
-### 4.1. Via nimble
+```nim
+import katima
+
+echo "医学を学ぶ".toOldCharForms    # 醫學を學ぶ
+echo "醫學を學ぶ".toNewCharForms    # 医学を学ぶ
+echo "医学を学ぶ".toReversal        # 医学を学ぶ
+
+echo "學".isOldCharForm            # true
+echo "学".isOldCharForm            # false
+echo "学".isNewCharForm            # true
+echo "學".isNewCharForm            # false
+
+import unicode
+
+let kanji = "學学".toRunes
+echo kanji[0].isOldCharForm        # true
+echo kanji[1].isOldCharForm        # false
+echo kanji[1].isNewCharForm        # true
+echo kanji[0].isNewCharForm        # false
+```
+
+## 5. Installation
+
+### 5.1. Via nimble
 
 ```bash
 nimble install katima
 ```
 
-## 5. License
+## 6. License
 
 [MIT License](LICENSE)
