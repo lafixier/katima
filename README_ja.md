@@ -12,23 +12,9 @@
 
 <!-- ここにGIFを挿入 -->
 
-<div align="center">
-  <table>
-    <tr>
-      <thead>
-        <tr>
-          <th colspan="2">言語</th>
-        </tr>
-      </thead>
-      <tbody>
-        <td>日本語 (このファイル)</td>
-        <td>
-          <a href="README.md">英語</a>
-        </td>
-      </tbody>
-    </tr>
-  </table>
-</div>
+|     Languages      |                      |
+| :----------------: | :------------------: |
+| 日本語 (This file) | [English](README.md) |
 
 ## ToC <!-- omit in toc -->
 
