@@ -38,10 +38,10 @@
   - [3.1. CLI](#31-cli)
     - [3.1.1. REPL](#311-repl)
     - [3.1.2. Convert](#312-convert)
-- [4. 3.2 Library](#4-32-library)
-- [5. Installation](#5-installation)
-  - [5.1. Via nimble](#51-via-nimble)
-- [6. License](#6-license)
+  - [3.2. Library](#32-library)
+- [4. Installation](#4-installation)
+  - [4.1. Via nimble](#41-via-nimble)
+- [5. License](#5-license)
 
 ## 1. About
 
@@ -88,7 +88,7 @@ katima convert --newCharFormsMode "input_3.txt" # 醫学を學ぶ
 katima c -n "input_3.txt"                       # 醫学を學ぶ
 ```
 
-## 4. 3.2 Library
+### 3.2. Library
 
 ```nim
 import katima
@@ -111,14 +111,14 @@ echo kanji[1].isNewCharForm        # true
 echo kanji[0].isNewCharForm        # false
 ```
 
-## 5. Installation
+## 4. Installation
 
-### 5.1. Via nimble
+### 4.1. Via nimble
 
 ```bash
 nimble install katima
 ```
 
-## 6. License
+## 5. License
 
 [MIT License](LICENSE)
