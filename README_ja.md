@@ -26,7 +26,11 @@
     - [3.1.2. Convert](#312-convert)
   - [3.2. Library](#32-library)
 - [4. インストール](#4-インストール)
-  - [4.1. nimble経由](#41-nimble経由)
+  - [4.1. Via nimble](#41-via-nimble)
+    - [4.1.1. choosenimをインストール](#411-choosenimをインストール)
+      - [4.1.1.1. Unix/Linux](#4111-unixlinux)
+      - [4.1.1.2. Windows](#4112-windows)
+    - [4.1.2. katimaをインストール](#412-katimaをインストール)
 - [5. ライセンス](#5-ライセンス)
 
 ## 1. 概要
@@ -99,7 +103,27 @@ echo kanji[0].isNewCharForm        # false
 
 ## 4. インストール
 
-### 4.1. nimble経由
+### 4.1. Via nimble
+
+[choosenim](https://github.com/dom96/choosenim)をインストールして[nimble](https://github.com/nim-lang/nimble)を使うことができます。
+
+#### 4.1.1. choosenimをインストール
+
+##### 4.1.1.1. Unix/Linux
+
+```bash
+# curlを使う場合
+curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+
+# wgetを使う場合
+wget -qO - https://nim-lang.org/choosenim/init.sh | sh
+```
+
+##### 4.1.1.2. Windows
+
+[choosenim#windows](https://github.com/dom96/choosenim#windows)を御覧ください。
+
+#### 4.1.2. katimaをインストール
 
 ```bash
 nimble install katima

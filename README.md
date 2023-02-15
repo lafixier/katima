@@ -27,6 +27,10 @@
   - [3.2. Library](#32-library)
 - [4. Installation](#4-installation)
   - [4.1. Via nimble](#41-via-nimble)
+    - [4.1.1. Install choosenim](#411-install-choosenim)
+      - [4.1.1.1. On Unix/Linux](#4111-on-unixlinux)
+      - [4.1.1.2. On Windows](#4112-on-windows)
+    - [4.1.2. Install katima](#412-install-katima)
 - [5. License](#5-license)
 
 ## 1. About
@@ -100,6 +104,26 @@ echo kanji[0].isNewCharForm        # false
 ## 4. Installation
 
 ### 4.1. Via nimble
+
+You can use [nimble](https://github.com/nim-lang/nimble) by installing [choosenim](https://github.com/dom96/choosenim).
+
+#### 4.1.1. Install choosenim
+
+##### 4.1.1.1. On Unix/Linux
+
+```bash
+# If you use curl
+curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+
+# If you use wget
+wget -qO - https://nim-lang.org/choosenim/init.sh | sh
+```
+
+##### 4.1.1.2. On Windows
+
+Please see [choosenim#windows](https://github.com/dom96/choosenim#windows).
+
+#### 4.1.2. Install katima
 
 ```bash
 nimble install katima
