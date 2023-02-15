@@ -12,9 +12,10 @@
 
 <!-- ここにGIFを挿入 -->
 
-|        Languages         |                     |
-| :----------------------: | :-----------------: |
-| [日本語](./README_ja.md) | English (This file) |
+| Language |             README             |
+| :------: | :----------------------------: |
+| English  |          (This file)           |
+|  日本語  | [README_ja.md](./README_ja.md) |
 
 ## ToC <!-- omit in toc -->
 
