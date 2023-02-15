@@ -33,6 +33,7 @@
       - [4.1.1.2. Windows](#4112-windows)
     - [4.1.2. katimaをインストール](#412-katimaをインストール)
 - [5. ライセンス](#5-ライセンス)
+- [6. 作者](#6-作者)
 
 ## 1. 概要
 
@@ -133,3 +134,7 @@ nimble install katima
 ## 5. ライセンス
 
 [MIT License](LICENSE)
+
+## 6. 作者
+
+[Lafixier Furude](https://github.com/lafixier)
