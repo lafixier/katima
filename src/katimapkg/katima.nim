@@ -47,22 +47,29 @@ var k = Katima()
 k.init()
 
 proc toOldCharForms*(s: string): string =
+  ## Converts `s` to the old character forms.
   k.convert(s, DestType.Old)
 
 proc toNewCharForms*(s: string): string =
+  ## Converts `s` to the new character forms.
   k.convert(s, DestType.New)
 
 proc toReversal*(s: string): string =
+  ## Converts the old character forms to the new character forms, the new character forms to the old character forms .
   k.convert(s, DestType.Reversal)
 
 proc isOldCharForm*(s: string): bool =
+  ## Returns true if the first character of `s` is written in the old character form.
   s == ($s.toRunes[0]).toOldCharForms
 
 proc isOldCharForm*(r: Rune): bool =
+  ## Returns true if `r` is written in the old character form.
   $r == ($r).toOldCharForms
 
 proc isNewCharForm*(s: string): bool =
+  ## Returns true if the first character of `s` is written in the new character form.
   s == ($s.toRunes[0]).toNewCharForms
 
 proc isNewCharForm*(r: Rune): bool =
+  ## Returns true if `r` is written in the new character form.
   $r == ($r).toNewCharForms
