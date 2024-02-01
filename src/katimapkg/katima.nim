@@ -16,3 +16,18 @@ func isHentaigana*(c: Rune): bool =
 func isHiragana*(c: Rune): bool =
   ## Checks whether a rune is a hiragana character
   c.isOrthographicHiragana or c.isHentaigana
+
+
+func isFullwidthKatakana*(c: Rune): bool =
+  ## Checks whether a rune is a fullwidth katakana character
+  c.int >= 0x30A0 and c.int <= 0x30FF
+
+
+func isHalfwidthKatakana*(c: Rune): bool =
+  ## Checks whether a rune is a halfwidth katakana character
+  c.int >= 0xFF65 and c.int <= 0xFF9F
+
+
+func isKatakana*(c: Rune): bool =
+  ## Checks whether a rune is a katakana character
+  c.isFullwidthKatakana or c.isHalfwidthKatakana
