@@ -68,11 +68,11 @@ func isHentaigana*(s: string): bool =
 
 func isHiragana*(c: Rune): bool =
   ## Checks whether a rune is a hiragana.
-  isHiraganaLetter(c) or
-  isHiraganaIterationMark(c) or
-  isHiraganaDiagraph(c) or
-  isHistoricHiragana(c) or
-  isHentaigana(c)
+  c.isHiraganaLetter or
+  c.isHiraganaIterationMark or
+  c.isHiraganaDiagraph or
+  c.isHistoricHiragana or
+  c.isHentaigana
 
 
 func isHiragana*(s: string): bool =
